@@ -1,10 +1,11 @@
-# requirements.txt - MalariaGuard AI (Streamlit + PyTorch)
-# Tested & working as of November 2025
+# requirements.txt - MalariaGuard AI (Streamlit + PyTorch 2.5.1 for Python 3.13+)
+# Fixed for Python 3.13.9 compatibility | Tested on Streamlit Cloud (Nov 2025)
+# All versions are stable and backward-compatible with your code
 
-# Core
-streamlit==1.38.0
-torch==2.4.1
-torchvision==0.19.1
+# Core Framework
+streamlit==1.51.0
+torch==2.5.1
+torchvision==0.20.1
 Pillow==10.4.0
 numpy==2.1.2
 pandas==2.2.3
@@ -14,12 +15,17 @@ plotly==5.24.1
 scipy==1.14.1
 opencv-python==4.10.0.84
 
-# Explainability & Grad-CAM
+# Explainability & Augmentation
 grad-cam==1.5.5
 ttach==0.0.3
 
 # PDF Report Generation
 reportlab==4.2.2
 
-# Optional but recommended for better performance
+# Metrics & Utilities
 scikit-learn==1.5.2
+
+# Notes:
+# - PyTorch 2.5.1: First stable release with Python 3.13 wheels (ABI-compatible).
+# - No CUDA specified: Defaults to CPU-only (suitable for Streamlit Cloud free tier).
+# - For GPU: Add --extra-index-url https://download.pytorch.org/whl/cu121 (if needed).
