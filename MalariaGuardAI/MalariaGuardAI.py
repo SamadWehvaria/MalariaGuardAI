@@ -106,12 +106,12 @@ if 'reference_color_stats' not in st.session_state:
 # ========================= MODEL LOADER (FIXED) =========================
 @st.cache_resource
 def load_model():
-    if not os.path.exists("malaria_model.pth"):
-        st.error("Model file 'malaria_model.pth' not found. Please place it in the app directory.")
+    if not os.path.exists("MalariaGuardAI/malaria_model.pth"):
+        st.error("Model file 'MalariaGuardAI/malaria_model.pth' not found. Please place it in the app directory.")
         st.stop()
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    state_dict = torch.load("malaria_model.pth", map_location=device)
+    state_dict = torch.load("MalariaGuardAI/malaria_model.pth", map_location=device)
     
     # Handle different checkpoint formats
     if isinstance(state_dict, dict) and 'state_dict' in state_dict:
